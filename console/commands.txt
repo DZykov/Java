@@ -1,0 +1,26 @@
+-help		shows the list of all commants
+-clear/cls	cleans the console’s display
+-popup [text]	creates a window with a [text]
+-loop [int]	repeats next command [int] times
+-start [path to folder/path to object/name of a program/path to website]
+-trace true/false
+-get [ip/time/date]	shows [ip/time/date]
+-exit			closes console
+-search [directory] [name/format of file]
+-show [path]	shows all files, folders (even hidden)
+-create [file/folder] [path] [name,format/name]
+-read [path]	reads file
+-process	shows all processes
+-kill [process]	kills a process (type name or id of a process)
+-play [maze/agario/snake/slither]
+-crypt/encrypt [path to the file] save/delete [path to a new file] [name of file.format] delete*(optional; deletes new file) – crypted/encrypted text will be displayed
+-youtube/utube [key words]	opens a video which matches key words
+-calc [int] [mathematical symbol] [int]
+-calc [int] ! 1			calculates factorial
+-calc 1 [cos/sin/tan] [int]     calculates trigonometric function
+-hide	hides console
+-text color [r, g, b]/[color in words (red/white/etc)]	changes the color of a text
+-text font [size(integer)] [name of the font]		changes the font of a text
+-back [r, g, b]/[color in words (red/white/etc)]	changes the background color
+-size [integer for width, integer for height]/[normal]	changes the size of a console
+ 			
