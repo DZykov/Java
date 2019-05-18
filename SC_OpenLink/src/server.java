@@ -38,10 +38,6 @@ public class server
    {
 	   try 
 		{
-			//Opens the browser with the youtube link (the raplceall thing just replaces all whitespace with the "+"
-			//so the URL understands it)
-			//crutch
-		   //URLConnection conn =  new URL(link).openConnection();
 		   Desktop.getDesktop().browse(new URI(link));
 		} 
 	    catch (IOException | URISyntaxException e) 
