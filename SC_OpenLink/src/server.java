@@ -1,0 +1,52 @@
+import java.awt.Desktop;
+import java.io.*;
+import java.net.*;
+
+
+public class server 
+{
+   public static void main(String argv[]) throws Exception
+      {
+            String clientLink;
+            int port = 6789;
+            ServerSocket welcomeSocket = new ServerSocket(port);
+            Socket connectionSocket = welcomeSocket.accept();
+            BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+            clientLink = inFromClient.readLine();
+            System.out.println("Received: " + clientLink);
+            if (clientLink.toLowerCase().equals("exist"))
+        	{
+            	welcomeSocket.close();
+        		return;
+        	}
+        	openBrowser(clientLink);
+            while(connectionSocket.isConnected()) 
+            {
+            	clientLink = inFromClient.readLine();
+                System.out.println("Received: " + clientLink);
+            	if (clientLink.toLowerCase().equals("exist"))
+            	{
+            		welcomeSocket.close();
+            		return;
+            	}
+            	openBrowser(clientLink);
+            }
+      }
+   
+   public static void openBrowser(String link)
+   {
+	   try 
+		{
+			//Opens the browser with the youtube link (the raplceall thing just replaces all whitespace with the "+"
+			//so the URL understands it)
+			//crutch
+		   //URLConnection conn =  new URL(link).openConnection();
+		   Desktop.getDesktop().browse(new URI(link));
+		} 
+	    catch (IOException | URISyntaxException e) 
+		{
+			System.out.println("Link does not exist or connection has failed");
+		}
+   }
+   
+} 
