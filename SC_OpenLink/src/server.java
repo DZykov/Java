@@ -9,7 +9,8 @@ public class server
       {
             String clientLink;
             int port = 6789;
-            ServerSocket welcomeSocket = new ServerSocket(port);
+            String ip = "localhost"; // or 192.168.X.X
+            ServerSocket welcomeSocket = new ServerSocket(port, 0, InetAddress.getByName(ip));
             Socket connectionSocket = welcomeSocket.accept();
             BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
             clientLink = inFromClient.readLine();
